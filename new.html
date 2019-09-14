@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="U.css" type="text/css">
 
 </head>
+
+    <script>
+        elem.onclick = function(){
+            alert('Good');
+        };
+    </script>
+
 <body>
     
     <div class="mainText">
@@ -16,7 +23,7 @@
             English
         </div>
         
-        <div class="mainText__start">
+        <div type="button" class="button_start">
             Start
         </div>
     </div>
@@ -30,12 +37,14 @@
         </div>
 
         <div class="window">
+            
+            <div class="InputField">
             <div class="EnglishWord"> test </div>
-            <input placeholder="Введите слово" size="40" maxlength="20" required> 
-               <a href="#" class="sent"> ОК </a> 
-        </input>
+                <input placeholder="Введите слово" size="40" maxlength="20" required> 
+                <a href="#" class="sent"> ОК </a> 
+            </div>
         </div>
-
     </div>
+
 </body>
 </html>
