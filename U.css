@@ -60,15 +60,61 @@
             outline: none;
         }
 
-        a.button1:hover {
+        a.button1:hover, a.button1:focus {
             background: rgb(245, 245, 245);
         }
 
-        a.button1:focus {
-            background: rgb(212, 212, 212);
+        a.button2{
+            background: rgb(255, 255, 255);
+            display: block;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            padding: 20px 30px;
+            color: black;
+            text-decoration: none;
+            outline: none;
         }
 
-        .window {
+        a.button2:hover, a.button2:focus {
+            background: rgb(245, 245, 245);
+        }
+
+        a.button3{
+            background: rgb(255, 255, 255);
+            display: block;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            padding: 20px 30px;
+            color: black;
+            text-decoration: none;
+            outline: none;
+        }
+
+        a.button3:hover, a.button3:focus {
+            background: rgb(245, 245, 245);
+        }
+
+        .window1 {
+            background: white;
+            margin-left: 3px;
+            width: 75%; 
+            height: 800px;
+            height: -webkit-fill-available;
+            text-align: center;
+        }
+
+        .window2 {
+            background: white;
+            margin-left: 3px;
+            width: 75%; 
+            height: 800px;
+            height: -webkit-fill-available;
+            text-align: center;
+        }
+
+        .window3 {
             background: white;
             margin-left: 3px;
             width: 75%; 
@@ -79,6 +125,7 @@
 
         .InputField{
             margin-top: 30%;
+            margin-left: 15%;
         }
 
         input {
@@ -91,6 +138,7 @@
         }
 
         a.sent{
+            background: rgb(199, 199, 199);
             margin-left: -5px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 23.5px;
@@ -104,7 +152,14 @@
         }
 
         .EnglishWord {
-            margin-left: 43%;
+            margin-left: 40%;
+            font-size: 250%;
+            text-align: center;
+            width: max-content;
+        }
+
+        .RussianWord {
+            margin-left: 40%;
             font-size: 250%;
             text-align: center;
             width: max-content;

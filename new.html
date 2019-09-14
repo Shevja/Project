@@ -6,15 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>learnEnglish</title>
     <link rel="stylesheet" href="U.css" type="text/css">
-
 </head>
-
-    <script>
-        elem.onclick = function(){
-            alert('Good');
-        };
-    </script>
-
 <body>
     
     <div class="mainText">
@@ -23,7 +15,7 @@
             English
         </div>
         
-        <div type="button" class="button_start">
+        <div class="button_start">
             Start
         </div>
     </div>
@@ -32,19 +24,81 @@
 
         <div class="sidebar">
             <a href="#" class="button1"> game 1 </a>
-            <a href="#" class="button1"> game 2 </a>
-            <a href="#" class="button1"> game 3 </a>
+            <a href="#" class="button2"> game 2 </a>
+            <a href="#" class="button3"> game 3 </a>
         </div>
 
-        <div class="window">
+        <div class="window1">
             
             <div class="InputField">
-            <div class="EnglishWord"> test </div>
+            <div class="EnglishWord"> Test </div>
                 <input placeholder="Введите слово" size="40" maxlength="20" required> 
                 <a href="#" class="sent"> ОК </a> 
             </div>
-        </div>
-    </div>
 
+        </div>
+
+        <div class="window2">
+            
+                <div class="InputField">
+                <div class="RussianWord"> Тест </div>
+                    <input placeholder="Input word" size="40" maxlength="20" required> 
+                    <a href="#" class="sent"> ОК </a> 
+                </div>
+        
+        </div>
+
+        <div class="window2">
+            
+                <div class="InputField">
+                <div class="EnglishWord"> Test </div>
+                    <input placeholder="Input word" size="40" maxlength="20" required> 
+                    <a href="#" class="sent"> ОК </a> 
+                </div>
+        
+        </div>
+
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+    const $button_start = $('.button_start');
+    const $button1 = $('.button1');
+    const $button2 = $('.button2');
+    const $button3 = $('.button3');
+
+    $button_start.on('click', () => {
+        console.log('Переход...');
+        $(".mainText").css("display", "none");
+        $(".site").css("display", "flex");
+        $(".window1").css("display", "none");
+        $(".window2").css("display", "none");
+        console.log('Переход выполнен');
+    });
+
+    $button1.on('click', () => {
+        console.log('Переход... ,fk,tc');
+        $(".window1").css("display", "inherit");
+        $(".window2").css("display", "none");
+        $(".window3").css("display", "none");
+        console.log('Переход выполнен');
+    });
+
+    $button2.on('click', () => {
+        console.log('Переход... ,fk,tc');
+        $(".window3").css("display", "none");
+        $(".window2").css("display", "inherit");
+        $(".window1").css("display", "none");
+        console.log('Переход выполнен');
+    });
+
+    $button3.on('click', () => {
+        console.log('Переход... ,fk,tc');
+        $(".window2").css("display", "none");
+        $(".window1").css("display", "none");
+        $(".window3").css("display", "inherit");
+        console.log('Переход выполнен');
+    });
+
+    </script>
 </body>
 </html>
