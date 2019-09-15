@@ -121,7 +121,7 @@
         console.log('Переход выполнен');
     });
 
-    const controller = {
+    const controller1 = {
         counter: 0,
         currentwordrus: null,
         currentworden: null,
@@ -129,20 +129,32 @@
             this.currentwordrus = dictionary[worden[this.counter]];
             this.currentworden = worden[this.counter];
             this.counter++;
-            return this.currentwordrus|| 'Тренировка закончена!';
+            return this.currentwordrus || 'Тренировка закончена!';
+        }    
+    };
+
+    const controller3 = {
+        counter: 0,
+        currentwordrus: null,
+        currentworden: null,
+        getnewword: function () {
+            this.currentwordrus = dictionary[worden[this.counter]];
+            this.currentworden = worden[this.counter];
+            this.counter++;
+            return this.currentwordrus || 'Тренировка закончена!';
         }    
     };
 
     $sent1.on('click', () => {
         const clientwordrus = $Inputword1.val();
-        const { currentwordrus } = controller;
+        const { currentwordrus } = controller1;
         console.log(currentwordrus + ' and ' + clientwordrus);
         if (currentwordrus.toLowerCase() === clientwordrus.toLowerCase()) {
             alert('RIGHT!!!');
             $Inputword1.val('');
             setnewword();
         }else {
-            alert('Wrong');
+            alert('Смените раскладку');
         }
     });
 
@@ -154,22 +166,29 @@
 
     $sent3.on('click', () => {
         const clientworden = $Inputword3.val();
-        const { currentworden } = controller;
+        const { currentworden } = controller3;
         console.log(currentworden + ' and ' + clientworden);
         if (currentworden.toLowerCase() === clientworden.toLowerCase()) {
             alert('RIGHT!!!');
             $Inputword3.val('');
-            setnewword();
+            setnewword3();
         }else {
-            alert('Wrong');
+            alert('Смените раскладку');
         }
     });
 
-    setnewword = () => {
-        $EnglishWord.html(controller.getnewword());
+    setnewword1 = () => {
+        $EnglishWord.html(controller1.getnewword());
     };
 
-    setnewword();
+    setnewword1();
+
+    setnewword3 = () => {
+        $EnglishWord.html(controller1.getnewword());
+    };
+
+    setnewword3();
+
 
     </script>
 </body>
