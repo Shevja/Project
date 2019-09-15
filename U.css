@@ -213,6 +213,13 @@
             width: max-content;
         }
 
+        .EnglishWord1 {
+            margin-left: 40%;
+            font-size: 250%;
+            text-align: center;
+            width: max-content;
+        }
+
         .RussianWord {
             margin-left: 40%;
             font-size: 250%;

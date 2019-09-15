@@ -23,9 +23,9 @@
     <div class="site">
 
         <div class="sidebar">
-            <a href="#" class="button1"> game 1 </a>
-            <a href="#" class="button2"> game 2 </a>
-            <a href="#" class="button3"> game 3 </a>
+            <a class="button1"> game 1 </a>
+            <a class="button2"> game 2 </a>
+            <a class="button3"> game 3 </a>
         </div>
 
         <div class="window1">
@@ -33,7 +33,7 @@
             <div class="InputField">
             <div class="EnglishWord"></div>
                 <input class="Inputword1" placeholder="Введите слово" size="40" maxlength="20" required> 
-                <a href="#" class="sent1"> ОК </a> 
+                <a class="sent1"> ОК </a> 
             </div>
 
         </div>
@@ -43,7 +43,7 @@
                 <div class="InputField">
                 <div class="RussianWord"></div>
                     <input class="Inputword2" placeholder="Input word" size="40" maxlength="20" required> 
-                    <a href="#" class="sent2"> ОК </a> 
+                    <a class="sent2"> ОК </a> 
                 </div>
         
         </div>
@@ -51,145 +51,15 @@
         <div class="window3">
             
                 <div class="InputField">
-                <div class="EnglishWord"></div>
+                <div class="EnglishWord1"></div>
                     <input class="Inputword3" placeholder="Input word" size="40" maxlength="20" required> 
-                    <a href="#" class="sent3"> ОК </a> 
+                    <a class="sent3"> ОК </a> 
                 </div>
         
         </div>
 
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
-
-    const dictionary = {
-        Dog: 'Собака',
-        House: 'Дом',
-        Laptop: 'Ноутбук'
-    };
-
-    const worden = Object.keys(dictionary);
-    // const wordrus = dictionary[1];
-
-    const $button_start = $('.button_start');
-    const $button1 = $('.button1');
-    const $button2 = $('.button2');
-    const $button3 = $('.button3');
-    const $sent1 = $('.sent1');
-    const $sent2 = $('.sent2');
-    const $sent3 = $('.sent3');
-    const $Inputword1 = $('.Inputword1');
-    const $Inputword2 = $('.Inputword2');
-    const $Inputword3 = $('.Inputword3');
-    const $EnglishWord = $('.EnglishWord');
-
-    $button_start.on('click', () => {
-        console.log('Переход...');
-        $(".mainText").css("display", "none");
-        $(".site").css("display", "flex");
-        $(".window1").css("display", "none");
-        $(".window2").css("display", "none");
-        $(".window3").css("display", "none");
-        console.log('Переход выполнен');
-    });
-
-    
-    $button1.on('click', () => {
-        $('.EnglishWord').html(worden[0]);
-        console.log('Переход... game1');
-        $(".window1").css("display", "inherit");
-        $(".window2").css("display", "none");
-        $(".window3").css("display", "none");
-        console.log('Переход выполнен');
-    });
-
-    $button2.on('click', () => {
-        $('.RussianWord').html(dictionary[worden[0]]);
-        console.log('Переход... game2');
-        $(".window3").css("display", "none");
-        $(".window2").css("display", "inherit");
-        $(".window1").css("display", "none");
-        console.log('Переход выполнен');
-    });
-
-    $button3.on('click', () => {
-        $('.EnglishWord').html(worden[0]);
-        console.log('Переход... game3');
-        $(".window2").css("display", "none");
-        $(".window1").css("display", "none");
-        $(".window3").css("display", "inherit");
-        console.log('Переход выполнен');
-    });
-
-    const controller1 = {
-        counter: 0,
-        currentwordrus: null,
-        currentworden: null,
-        getnewword: function () {
-            this.currentwordrus = dictionary[worden[this.counter]];
-            this.currentworden = worden[this.counter];
-            this.counter++;
-            return this.currentwordrus || 'Тренировка закончена!';
-        }    
-    };
-
-    const controller3 = {
-        counter: 0,
-        currentwordrus: null,
-        currentworden: null,
-        getnewword: function () {
-            this.currentwordrus = dictionary[worden[this.counter]];
-            this.currentworden = worden[this.counter];
-            this.counter++;
-            return this.currentwordrus || 'Тренировка закончена!';
-        }    
-    };
-
-    $sent1.on('click', () => {
-        const clientwordrus = $Inputword1.val();
-        const { currentwordrus } = controller1;
-        console.log(currentwordrus + ' and ' + clientwordrus);
-        if (currentwordrus.toLowerCase() === clientwordrus.toLowerCase()) {
-            alert('RIGHT!!!');
-            $Inputword1.val('');
-            setnewword();
-        }else {
-            alert('Смените раскладку');
-        }
-    });
-
-    $sent2.on('click', () => {
-        const clientworden = $Inputword2.val();
-        alert(clientworden);
-        $Inputword2.val('');
-    });
-
-    $sent3.on('click', () => {
-        const clientworden = $Inputword3.val();
-        const { currentworden } = controller3;
-        console.log(currentworden + ' and ' + clientworden);
-        if (currentworden.toLowerCase() === clientworden.toLowerCase()) {
-            alert('RIGHT!!!');
-            $Inputword3.val('');
-            setnewword3();
-        }else {
-            alert('Смените раскладку');
-        }
-    });
-
-    setnewword1 = () => {
-        $EnglishWord.html(controller1.getnewword());
-    };
-
-    setnewword1();
-
-    setnewword3 = () => {
-        $EnglishWord.html(controller1.getnewword());
-    };
-
-    setnewword3();
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
