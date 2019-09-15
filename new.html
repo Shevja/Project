@@ -23,17 +23,17 @@
     <div class="site">
 
         <div class="sidebar">
-            <a href="#" class="button1"> game 1 </a>
-            <a href="#" class="button2"> game 2 </a>
-            <a href="#" class="button3"> game 3 </a>
+            <a class="button1"> game 1 </a>
+            <a class="button2"> game 2 </a>
+            <a class="button3"> game 3 </a>
         </div>
 
         <div class="window1">
             
             <div class="InputField">
-            <div class="EnglishWord"> Test </div>
-                <input class="Inputword" placeholder="Введите слово" size="40" maxlength="20" required> 
-                <a href="#" class="sent"> ОК </a> 
+            <div class="EnglishWord"></div>
+                <input class="Inputword1" placeholder="Введите слово" size="40" maxlength="20" required> 
+                <a class="sent1"> ОК </a> 
             </div>
 
         </div>
@@ -41,9 +41,9 @@
         <div class="window2">
             
                 <div class="InputField">
-                <div class="RussianWord"> Тест </div>
-                    <input class="Inputword" placeholder="Input word" size="40" maxlength="20" required> 
-                    <a href="#" class="sent2"> ОК </a> 
+                <div class="RussianWord"></div>
+                    <input class="Inputword2" placeholder="Input word" size="40" maxlength="20" required> 
+                    <a class="sent2"> ОК </a> 
                 </div>
         
         </div>
@@ -51,89 +51,15 @@
         <div class="window3">
             
                 <div class="InputField">
-                <div class="EnglishWord"> Test </div>
-                    <input class="Inputword" placeholder="Input word" size="40" maxlength="20" required> 
-                    <a href="#" class="sent1"> ОК </a> 
+                <div class="EnglishWord1"></div>
+                    <input class="Inputword3" placeholder="Input word" size="40" maxlength="20" required> 
+                    <a class="sent3"> ОК </a> 
                 </div>
         
         </div>
 
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
-
-    const dictionary = {
-        dog: 'собака',
-        house: 'дом',
-        laptop: 'ноутбук'
-    };
-
-    const word = Object.keys(dictionary);
-
-    const $button_start = $('.button_start');
-    const $button1 = $('.button1');
-    const $button2 = $('.button2');
-    const $button3 = $('.button3');
-    const $sent1 = $('.sent1');
-    const $sent2 = $('.sent2');
-    const $sent3 = $('.sent3');
-    const $Inputword = $('.Inputword');
-
-    $button_start.on('click', () => {
-        console.log('Переход...');
-        $(".mainText").css("display", "none");
-        $(".site").css("display", "flex");
-        $(".window1").css("display", "none");
-        $(".window2").css("display", "none");
-        $(".window3").css("display", "none");
-        console.log('Переход выполнен');
-    });
-
-    $sent1.on('click', () => {
-        const $clientword = $Inputword.val();
-        alert($clientword);
-        $Inputword.val('');
-        console.log($clientword);
-    });
-
-    $sent2.on('click', () => {
-        const $clientword = $Inputword.val();
-        alert($clientword);
-        $Inputword.val('');
-        console.log($clientword);
-    });
-
-    $sent3.on('click', () => {
-        const $clientword = $Inputword.val();
-        alert($clientword);
-        $Inputword.val('');
-        console.log($clientword);
-    });
-
-    $button1.on('click', () => {
-        console.log('Переход... game1');
-        $(".window1").css("display", "inherit");
-        $(".window2").css("display", "none");
-        $(".window3").css("display", "none");
-        console.log('Переход выполнен');
-    });
-
-    $button2.on('click', () => {
-        console.log('Переход... game2');
-        $(".window3").css("display", "none");
-        $(".window2").css("display", "inherit");
-        $(".window1").css("display", "none");
-        console.log('Переход выполнен');
-    });
-
-    $button3.on('click', () => {
-        console.log('Переход... game3');
-        $(".window2").css("display", "none");
-        $(".window1").css("display", "none");
-        $(".window3").css("display", "inherit");
-        console.log('Переход выполнен');
-    });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
