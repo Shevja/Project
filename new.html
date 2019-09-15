@@ -31,7 +31,7 @@
         <div class="window1">
             
             <div class="InputField">
-            <div class="EnglishWord"> Test </div>
+            <div class="EnglishWord"></div>
                 <input class="Inputword1" placeholder="Введите слово" size="40" maxlength="20" required> 
                 <a href="#" class="sent1"> ОК </a> 
             </div>
@@ -41,7 +41,7 @@
         <div class="window2">
             
                 <div class="InputField">
-                <div class="RussianWord"> Тест </div>
+                <div class="RussianWord"></div>
                     <input class="Inputword2" placeholder="Input word" size="40" maxlength="20" required> 
                     <a href="#" class="sent2"> ОК </a> 
                 </div>
@@ -51,7 +51,7 @@
         <div class="window3">
             
                 <div class="InputField">
-                <div class="EnglishWord"> Test </div>
+                <div class="EnglishWord"></div>
                     <input class="Inputword3" placeholder="Input word" size="40" maxlength="20" required> 
                     <a href="#" class="sent3"> ОК </a> 
                 </div>
@@ -63,12 +63,13 @@
     <script>
 
     const dictionary = {
-        Dog: 'собака',
+        Dog: 'Собака',
         House: 'Дом',
         Laptop: 'Ноутбук'
     };
 
-    const word = Object.keys(dictionary);
+    const worden = Object.keys(dictionary);
+    // const wordrus = dictionary[1];
 
     const $button_start = $('.button_start');
     const $button1 = $('.button1');
@@ -80,6 +81,7 @@
     const $Inputword1 = $('.Inputword1');
     const $Inputword2 = $('.Inputword2');
     const $Inputword3 = $('.Inputword3');
+    const $EnglishWord = $('.EnglishWord');
 
     $button_start.on('click', () => {
         console.log('Переход...');
@@ -93,7 +95,7 @@
 
     
     $button1.on('click', () => {
-        $('.EnglishWord').html(word[1]);
+        $('.EnglishWord').html(worden[0]);
         console.log('Переход... game1');
         $(".window1").css("display", "inherit");
         $(".window2").css("display", "none");
@@ -102,6 +104,7 @@
     });
 
     $button2.on('click', () => {
+        $('.RussianWord').html(dictionary[worden[0]]);
         console.log('Переход... game2');
         $(".window3").css("display", "none");
         $(".window2").css("display", "inherit");
@@ -110,22 +113,36 @@
     });
 
     $button3.on('click', () => {
+        $('.EnglishWord').html(worden[0]);
         console.log('Переход... game3');
         $(".window2").css("display", "none");
         $(".window1").css("display", "none");
         $(".window3").css("display", "inherit");
         console.log('Переход выполнен');
     });
-    
+
+    const controller = {
+        counter: 0,
+        currentwordrus: null,
+        currentworden: null,
+        getnewword: function () {
+            this.currentwordrus = dictionary[worden[this.counter]];
+            this.currentworden = worden[this.counter];
+            this.counter++;
+            return this.currentwordrus|| 'Тренировка закончена!';
+        }    
+    };
+
     $sent1.on('click', () => {
         const clientwordrus = $Inputword1.val();
-        const wordforcomparisen = word[1];
-        if (wordforcomparisen.toLowerCase() === clientwordrus.toLowerCase()) {
+        const { currentwordrus } = controller;
+        console.log(currentwordrus + ' and ' + clientwordrus);
+        if (currentwordrus.toLowerCase() === clientwordrus.toLowerCase()) {
             alert('RIGHT!!!');
             $Inputword1.val('');
             setnewword();
         }else {
-        alert('Wrong');
+            alert('Wrong');
         }
     });
 
@@ -136,10 +153,23 @@
     });
 
     $sent3.on('click', () => {
-        const clientwordeng = $Inputword3.val();
-        alert(clientwordeng);
-        $Inputword3.val('');
+        const clientworden = $Inputword3.val();
+        const { currentworden } = controller;
+        console.log(currentworden + ' and ' + clientworden);
+        if (currentworden.toLowerCase() === clientworden.toLowerCase()) {
+            alert('RIGHT!!!');
+            $Inputword3.val('');
+            setnewword();
+        }else {
+            alert('Wrong');
+        }
     });
+
+    setnewword = () => {
+        $EnglishWord.html(controller.getnewword());
+    };
+
+    setnewword();
 
     </script>
 </body>
