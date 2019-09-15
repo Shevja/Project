@@ -101,7 +101,6 @@
             margin-left: 3px;
             width: 75%; 
             height: 800px;
-            height: -webkit-fill-available;
             text-align: center;
         }
 
@@ -110,7 +109,6 @@
             margin-left: 3px;
             width: 75%; 
             height: 800px;
-            height: -webkit-fill-available;
             text-align: center;
         }
 
@@ -119,7 +117,6 @@
             margin-left: 3px;
             width: 75%; 
             height: 800px;
-            height: -webkit-fill-available;
             text-align: center;
         }
 
@@ -128,7 +125,7 @@
             margin-left: 15%;
         }
 
-        input {
+        .Inputword {
             width: 30%;
             font-size: 150%;
             border: none;
@@ -137,7 +134,7 @@
             height: 25px;
         }
 
-        a.sent{
+        a.sent1{
             background: rgb(199, 199, 199);
             margin-left: -5px;
             font-family: Arial, Helvetica, sans-serif;
@@ -146,9 +143,49 @@
             text-decoration: none;
         }
 
-        a.sent:hover {
+        a.sent1:hover {
             background: green;
             color: white;
+        }
+        
+        a.sent1:focus {
+            background: white;
+        }
+
+        a.sent2{
+            background: rgb(199, 199, 199);
+            margin-left: -5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 23.5px;
+            color: black;
+            text-decoration: none;
+        }
+
+        a.sent2:hover {
+            background: green;
+            color: white;
+        }
+        
+        a.sent2:focus {
+            background: white;
+        }
+
+        a.sent3 {
+            background: rgb(199, 199, 199);
+            margin-left: -5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 23.5px;
+            color: black;
+            text-decoration: none;
+        }
+
+        a.sent3:hover {
+            background: green;
+            color: white;
+        }
+        
+        a.sent3:focus {
+            background: white;
         }
 
         .EnglishWord {
